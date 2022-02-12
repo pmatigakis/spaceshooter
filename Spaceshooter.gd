@@ -12,13 +12,19 @@ onready var _screen_size_y = get_viewport_rect().size.y
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	for i in range(10):
-		var enemy = enemy_scene.instance()
-		enemy.rotate(deg2rad(180))
-		enemy.start(100, _screen_size_x-100, -rand_range(100, 100 + _screen_size_y * 0.5))
-		add_child(enemy)
+	$EnemyTimer.start()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
+
+
+func _on_EnemyTimer_timeout():
+	var enemy_spawn_location = get_node("EnemyPath/EnemySpawnLocation")
+	enemy_spawn_location.offset = randi()
+	
+	var enemy = enemy_scene.instance()
+	enemy.rotate(deg2rad(180))
+	enemy.position = enemy_spawn_location.position
+	add_child(enemy)
