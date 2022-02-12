@@ -27,4 +27,8 @@ func _on_EnemyTimer_timeout():
 	var enemy = enemy_scene.instance()
 	enemy.rotate(deg2rad(180))
 	enemy.position = enemy_spawn_location.position
+	enemy.connect("killed", self, "_on_Enemy_killed")
 	add_child(enemy)
+
+func _on_Enemy_killed():
+	$HUD.increase_score()

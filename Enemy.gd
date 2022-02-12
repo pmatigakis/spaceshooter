@@ -1,6 +1,6 @@
 extends Area2D
 
-signal hit
+signal killed
 
 const MOVE_SPEED = 50
 
@@ -14,8 +14,9 @@ func _ready():
 	pass # Replace with function body.
 
 func die():
+	emit_signal("killed")
 	queue_free()
-
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	position = position + (Vector2(0, MOVE_SPEED) * delta)
