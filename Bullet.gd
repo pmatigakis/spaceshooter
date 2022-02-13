@@ -24,6 +24,6 @@ func _on_Bullet_viewport_exited(viewport):
 
 func _on_area_entered(area):
 	if area.is_in_group(target):
-		if area.has_method("die"):
-			area.die()
+		if area.has_method("hit"):
+			area.hit()
 			queue_free()

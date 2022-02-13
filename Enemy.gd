@@ -13,7 +13,7 @@ const MOVE_SPEED = 50
 func _ready():
 	pass # Replace with function body.
 
-func die():
+func hit():
 	emit_signal("killed")
 	queue_free()
 	
