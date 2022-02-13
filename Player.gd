@@ -1,6 +1,7 @@
 extends Area2D
 
 signal shoot(bullet, position)
+signal killed
 
 var Bullet = preload("res://Bullet.tscn")
 
@@ -30,3 +31,7 @@ func _process(delta):
 
 	if Input.is_action_just_pressed("ui_select"):
 		emit_signal("shoot", Bullet, $GunPosition.global_position)
+
+func hit():
+	emit_signal("killed")
+	queue_free()

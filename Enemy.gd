@@ -2,7 +2,7 @@ extends Area2D
 
 signal killed
 
-const MOVE_SPEED = 50
+const speed = 50
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -19,8 +19,14 @@ func hit():
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	position = position + (Vector2(0, MOVE_SPEED) * delta)
+	position = position + (Vector2(0, speed) * delta)
 
 
 func _on_enemy_viewport_exited(viewport):
 	queue_free()
+
+
+func _on_area_entered(area):
+	if area.is_in_group("PlayerGroup"):
+		area.hit()
+		queue_free()

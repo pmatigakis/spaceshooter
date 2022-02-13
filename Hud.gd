@@ -19,3 +19,6 @@ func _ready():
 func increase_score():
 	score += 1
 	$Score.text = String(score)
+
+func show_message(message):
+	$Message.text = message

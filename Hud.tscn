@@ -16,3 +16,14 @@ valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Message" type="Label" parent="."]
+margin_left = 641.0
+margin_top = 342.0
+margin_right = 681.0
+margin_bottom = 356.0
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}

@@ -26,5 +26,6 @@ rotation = 0.00369039
 
 [node name="HUD" parent="." instance=ExtResource( 3 )]
 
+[connection signal="killed" from="Player" to="." method="_on_Player_killed"]
 [connection signal="shoot" from="Player" to="." method="_on_Player_shoot"]
 [connection signal="timeout" from="EnemyTimer" to="." method="_on_EnemyTimer_timeout"]
