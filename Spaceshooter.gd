@@ -32,3 +32,9 @@ func _on_EnemyTimer_timeout():
 
 func _on_Enemy_killed():
 	$HUD.increase_score()
+
+func _on_Player_shoot(Bullet, position):
+	var bullet = Bullet.instance()
+	bullet.position = position
+	bullet.start(Vector2(0, -1000), "EnemyGroup")
+	add_child(bullet)

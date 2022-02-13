@@ -1,6 +1,8 @@
 extends Area2D
 
-var bullet_scene = preload("res://Bullet.tscn")
+signal shoot(bullet, position)
+
+var Bullet = preload("res://Bullet.tscn")
 
 const MOVE_SPEED = 300
 
@@ -27,8 +29,4 @@ func _process(delta):
 	position.y = clamp(position.y - ud_action * MOVE_SPEED * delta, 50, _screen_size_y - 50)
 
 	if Input.is_action_just_pressed("ui_select"):
-		var bullet = bullet_scene.instance()
-		bullet.position = $GunPosition.global_position
-		bullet.transform = $GunPosition.global_transform
-		bullet.start(Vector2(0, -1000), "EnemyGroup")
-		get_parent().add_child(bullet)
+		emit_signal("shoot", Bullet, $GunPosition.global_position)
