@@ -54,5 +54,5 @@ func _on_Player_killed():
 func _on_Enemy_shoot(Bullet, position):
 	var bullet = Bullet.instance()
 	bullet.position = position
-	bullet.start(Vector2(0, 200), "PlayerGroup")
+	bullet.start(position.direction_to($Player.position) * 200, "PlayerGroup")
 	add_child(bullet)
