@@ -1,6 +1,9 @@
 extends Area2D
 
 signal killed
+signal shoot(bullet, position)
+
+var Bullet = preload("res://Bullet.tscn")
 
 var speed = 50
 
@@ -30,3 +33,15 @@ func _on_area_entered(area):
 	if area.is_in_group("PlayerGroup"):
 		area.hit()
 		queue_free()
+
+
+func _on_ShootingTimer_timeout():
+	emit_signal("shoot", Bullet, position)
+
+
+func start_shooting():
+	$ShootingTimer.start()
+
+
+func stop_shooting():
+	$ShootingTimer.stop()

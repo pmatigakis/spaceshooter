@@ -29,7 +29,9 @@ func _on_EnemyTimer_timeout():
 	enemy.position = enemy_spawn_location.position
 	enemy.speed += rand_range(0, 30)
 	enemy.connect("killed", self, "_on_Enemy_killed")
+	enemy.connect("shoot", self, "_on_Enemy_shoot")
 	add_child(enemy)
+	enemy.start_shooting()
 
 
 func _on_Enemy_killed():
@@ -45,4 +47,12 @@ func _on_Player_shoot(Bullet, position):
 
 func _on_Player_killed():
 	$EnemyTimer.stop()
+	get_tree().call_group("EnemyGroup", "stop_shooting")
 	$HUD.show_message("You died!")
+
+
+func _on_Enemy_shoot(Bullet, position):
+	var bullet = Bullet.instance()
+	bullet.position = position
+	bullet.start(Vector2(0, 200), "PlayerGroup")
+	add_child(bullet)
