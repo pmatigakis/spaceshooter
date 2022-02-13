@@ -2,7 +2,7 @@ extends Area2D
 
 signal killed
 
-const speed = 50
+var speed = 50
 
 # Declare member variables here. Examples:
 # var a = 2
