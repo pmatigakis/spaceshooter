@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/bullets1_0021_Circle------------------.png-daf5a3b2e4c3d1164c91884d89d0e601.stex"
+path="res://.import/enemyRed3.png-e964081a2cf776f8186cc3a5f4554ba0.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ships/bullets1_0021_Circle------------------.png"
-dest_files=[ "res://.import/bullets1_0021_Circle------------------.png-daf5a3b2e4c3d1164c91884d89d0e601.stex" ]
+source_file="res://assets/ships/enemyRed3.png"
+dest_files=[ "res://.import/enemyRed3.png-e964081a2cf776f8186cc3a5f4554ba0.stex" ]
 
 [params]
 

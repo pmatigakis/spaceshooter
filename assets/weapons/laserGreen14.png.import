@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/CoreDefender_NightMare_H_Judgement_209x182.png-c6fc4c6fe3aca3d88d02f142a35978d9.stex"
+path="res://.import/laserGreen14.png-dfc1af839edd70e07e40498f7e3c8da3.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ships/CoreDefender_NightMare_H_Judgement_209x182.png"
-dest_files=[ "res://.import/CoreDefender_NightMare_H_Judgement_209x182.png-c6fc4c6fe3aca3d88d02f142a35978d9.stex" ]
+source_file="res://assets/weapons/laserGreen14.png"
+dest_files=[ "res://.import/laserGreen14.png-dfc1af839edd70e07e40498f7e3c8da3.stex" ]
 
 [params]
 

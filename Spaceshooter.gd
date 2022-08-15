@@ -25,7 +25,7 @@ func _on_EnemyTimer_timeout():
 	enemy_spawn_location.offset = randi()
 	
 	var enemy = enemy_scene.instance()
-	enemy.rotate(deg2rad(180))
+	# enemy.rotate(deg2rad(180))
 	enemy.position = enemy_spawn_location.position
 	enemy.speed += rand_range(0, 30)
 	enemy.connect("killed", self, "_on_Enemy_killed")
