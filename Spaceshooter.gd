@@ -19,6 +19,10 @@ func _ready():
 #func _process(delta):
 #	pass
 
+func _input(event):
+	if event is InputEventKey and event.scancode == KEY_ESCAPE:
+		get_tree().change_scene("res://Menu.tscn")
+
 
 func _on_EnemyTimer_timeout():
 	var enemy_spawn_location = get_node("EnemyPath/EnemySpawnLocation")

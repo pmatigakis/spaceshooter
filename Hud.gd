@@ -22,3 +22,8 @@ func increase_score():
 
 func show_message(message):
 	$Message.text = message
+	$BackToMenu.visible = true
+
+
+func _on_BackToMenu_pressed():
+	get_tree().change_scene("res://Menu.tscn")
