@@ -1,11 +1,12 @@
 extends Area2D
 
 signal killed
-signal shoot(bullet, position)
+signal ready_to_fire(enemy)
 
 var Bullet = preload("res://Bullet.tscn")
 
 var speed = 50
+var shoot = true
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -24,6 +25,8 @@ func hit():
 func _process(delta):
 	position = position + (Vector2(0, speed) * delta)
 
+	if $Blaster.is_ready_to_fire() and shoot:
+		emit_signal("ready_to_fire", self)
 
 func _on_enemy_viewport_exited(viewport):
 	queue_free()
@@ -35,13 +38,8 @@ func _on_area_entered(area):
 		queue_free()
 
 
-func _on_ShootingTimer_timeout():
-	emit_signal("shoot", Bullet, position)
-
-
-func start_shooting():
-	$ShootingTimer.start()
-
+func fire(target_position):
+	$Blaster.fire(target_position)
 
 func stop_shooting():
-	$ShootingTimer.stop()
+	shoot = false
