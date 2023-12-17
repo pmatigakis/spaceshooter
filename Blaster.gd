@@ -16,8 +16,10 @@ func _ready():
 #func _process(delta):
 #	pass
 
+
 func is_ready_to_fire():
 	return $ReloadTimer.is_stopped()
+
 
 func fire(bullet_container, target_position):
 	if is_ready_to_fire():

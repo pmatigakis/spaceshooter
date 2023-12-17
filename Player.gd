@@ -32,9 +32,11 @@ func _process(delta):
 	if Input.is_action_just_pressed("ui_select"):
 		shoot()
 
+
 func hit():
 	emit_signal("killed")
 	queue_free()
+
 
 func shoot():
 	var bullet = Bullet.instance()

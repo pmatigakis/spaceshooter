@@ -17,10 +17,7 @@ var shoot = true
 func _ready():
 	pass # Replace with function body.
 
-func hit():
-	emit_signal("killed")
-	queue_free()
-	
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	position = position + (Vector2(0, speed) * delta)
@@ -28,6 +25,12 @@ func _process(delta):
 	if $Blaster.is_ready_to_fire() and shoot:
 		emit_signal("ready_to_fire", self)
 
+
+func hit():
+	emit_signal("killed")
+	queue_free()
+
+	
 func _on_enemy_viewport_exited(viewport):
 	queue_free()
 
@@ -40,6 +43,7 @@ func _on_area_entered(area):
 
 func fire(bullet_container, target_position):
 	$Blaster.fire(bullet_container, target_position)
+
 
 func stop_shooting():
 	shoot = false

@@ -16,9 +16,11 @@ func _ready():
 #func _process(delta):
 #	pass
 
+
 func increase_score():
 	score += 1
 	$Score.text = String(score)
+
 
 func show_message(message):
 	$Message.text = message
