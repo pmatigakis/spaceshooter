@@ -96,6 +96,10 @@ curve = SubResource( 1 )
 position = Vector2( 97, -141 )
 rotation = 0.00369039
 
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="Bullets" type="Node2D" parent="."]
+
 [node name="HUD" parent="." instance=ExtResource( 3 )]
 
 [connection signal="killed" from="Player" to="." method="_on_Player_killed"]

@@ -19,10 +19,10 @@ func _ready():
 func is_ready_to_fire():
 	return $ReloadTimer.is_stopped()
 
-func fire(target_position):
+func fire(bullet_container, target_position):
 	if is_ready_to_fire():
 		var bullet = Bullet.instance()
 		bullet.position = global_position
 		bullet.start(global_position.direction_to(target_position) * 200, "PlayerGroup")
-		get_tree().get_root().add_child(bullet)
+		bullet_container.add_child(bullet)
 		$ReloadTimer.start()

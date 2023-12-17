@@ -38,8 +38,8 @@ func _on_area_entered(area):
 		queue_free()
 
 
-func fire(target_position):
-	$Blaster.fire(target_position)
+func fire(bullet_container, target_position):
+	$Blaster.fire(bullet_container, target_position)
 
 func stop_shooting():
 	shoot = false
