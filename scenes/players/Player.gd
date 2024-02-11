@@ -3,7 +3,7 @@ extends Area2D
 signal shoot(bullet)
 signal killed
 
-var Bullet = preload("res://Bullet.tscn")
+var Bullet = preload("res://scenes/weapons/Bullet.tscn")
 
 const MOVE_SPEED = 300
 

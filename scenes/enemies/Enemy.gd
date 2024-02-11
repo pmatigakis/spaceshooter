@@ -3,7 +3,7 @@ extends Area2D
 signal killed
 signal ready_to_fire(enemy)
 
-var Bullet = preload("res://Bullet.tscn")
+var Bullet = preload("res://scenes/weapons/Bullet.tscn")
 
 var speed = 50
 var shoot = true

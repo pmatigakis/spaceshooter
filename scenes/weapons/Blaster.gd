@@ -1,7 +1,7 @@
 extends Node2D
 
 
-var Bullet = preload("res://Bullet.tscn")
+var Bullet = preload("res://scenes/weapons/Bullet.tscn")
 
 
 # Called when the node enters the scene tree for the first time.

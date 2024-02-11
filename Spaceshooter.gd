@@ -1,6 +1,6 @@
 extends Node2D
 
-var enemy_scene = preload("res://Enemy.tscn")
+var enemy_scene = preload("res:///scenes/enemies/Enemy.tscn")
 
 onready var _screen_size_x = get_viewport_rect().size.x
 onready var _screen_size_y = get_viewport_rect().size.y

@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=2]
 
-[ext_resource path="res://Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/players/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Spaceshooter.gd" type="Script" id=2]
 [ext_resource path="res://Hud.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/backgrounds/black.png" type="Texture" id=4]
