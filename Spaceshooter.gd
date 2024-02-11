@@ -35,10 +35,6 @@ func _on_Enemy_killed():
 	$HUD.increase_score()
 
 
-func _on_Player_shoot(bullet):
-	$Bullets.add_child(bullet)
-
-
 func _on_Player_killed():
 	$EnemyTimer.stop()
 	get_tree().call_group("EnemyGroup", "stop_shooting")

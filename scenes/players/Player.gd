@@ -1,6 +1,5 @@
 extends Area2D
 
-signal shoot(bullet)
 signal killed
 
 var Bullet = preload("res://scenes/weapons/Bullet.tscn")
@@ -37,4 +36,4 @@ func shoot():
 	var bullet = Bullet.instance()
 	bullet.position = $GunPosition.global_position
 	bullet.start(Vector2(0, -1000), "EnemyGroup")
-	emit_signal("shoot", bullet)
+	get_tree().root.get_node("Spaceshooter/Bullets").add_child(bullet)

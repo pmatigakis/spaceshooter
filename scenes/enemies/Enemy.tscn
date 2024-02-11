@@ -5,6 +5,7 @@
 [ext_resource path="res://scenes/weapons/Blaster.tscn" type="PackedScene" id=3]
 
 [node name="Area2D" type="Area2D" groups=["EnemyGroup"]]
+collision_layer = 2
 script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]

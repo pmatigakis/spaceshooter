@@ -4,6 +4,7 @@
 [ext_resource path="res://scenes/players/Player.gd" type="Script" id=2]
 
 [node name="Area2D" type="Area2D" groups=["PlayerGroup"]]
+collision_mask = 0
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
