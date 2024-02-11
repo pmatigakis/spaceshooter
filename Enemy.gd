@@ -8,10 +8,6 @@ var Bullet = preload("res://Bullet.tscn")
 var speed = 50
 var shoot = true
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -23,12 +19,9 @@ func _process(delta):
 	position = position + (Vector2(0, speed) * delta)
 
 	if $Blaster.is_ready_to_fire() and shoot:
-		emit_signal("ready_to_fire", self)
-
-
-func hit():
-	emit_signal("killed")
-	queue_free()
+		var player = get_tree().root.get_node("Spaceshooter/Player")
+		if player:
+			self._fire(player.position)
 
 	
 func _on_enemy_viewport_exited(viewport):
@@ -41,9 +34,14 @@ func _on_area_entered(area):
 		queue_free()
 
 
-func fire(bullet_container, target_position):
-	$Blaster.fire(bullet_container, target_position)
+func _fire(target_position):
+	$Blaster.fire(target_position)
 
 
 func stop_shooting():
 	shoot = false
+
+
+func hit():
+	emit_signal("killed")
+	queue_free()

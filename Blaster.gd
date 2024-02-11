@@ -1,9 +1,6 @@
 extends Node2D
 
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
 var Bullet = preload("res://Bullet.tscn")
 
 
@@ -21,10 +18,13 @@ func is_ready_to_fire():
 	return $ReloadTimer.is_stopped()
 
 
-func fire(bullet_container, target_position):
+func fire(target_position):
 	if is_ready_to_fire():
 		var bullet = Bullet.instance()
 		bullet.position = global_position
 		bullet.start(global_position.direction_to(target_position) * 200, "PlayerGroup")
+		
+		var bullet_container = get_tree().root.get_node("Spaceshooter/Bullets")
 		bullet_container.add_child(bullet)
+
 		$ReloadTimer.start()

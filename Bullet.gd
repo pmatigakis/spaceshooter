@@ -3,10 +3,6 @@ extends Area2D
 var velocity
 var target
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -17,17 +13,16 @@ func _process(delta):
 	position = position + velocity * delta
 
 
-func start(velocity, target):
-	self.velocity = velocity
-	self.target = target
-
-
 func _on_Bullet_viewport_exited(viewport):
 	queue_free()
 
 
 func _on_area_entered(area):
-	if area.is_in_group(target):
-		if area.has_method("hit"):
-			area.hit()
-			queue_free()
+	if area.is_in_group(target) and area.has_method("hit"):
+		area.hit()
+		queue_free()
+
+
+func start(velocity, target):
+	self.velocity = velocity
+	self.target = target

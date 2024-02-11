@@ -5,10 +5,6 @@ var enemy_scene = preload("res://Enemy.tscn")
 onready var _screen_size_x = get_viewport_rect().size.x
 onready var _screen_size_y = get_viewport_rect().size.y
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -32,7 +28,6 @@ func _on_EnemyTimer_timeout():
 	enemy.position = enemy_spawn_location.position
 	enemy.speed += rand_range(0, 30)
 	enemy.connect("killed", self, "_on_Enemy_killed")
-	enemy.connect("ready_to_fire", self, "_on_Enemy_ready_to_fire")
 	$Enemies.add_child(enemy)
 
 
@@ -48,7 +43,3 @@ func _on_Player_killed():
 	$EnemyTimer.stop()
 	get_tree().call_group("EnemyGroup", "stop_shooting")
 	$HUD.show_message("You died!")
-
-
-func _on_Enemy_ready_to_fire(enemy):
-	enemy.fire($Bullets, $Player.position)

@@ -11,11 +11,6 @@ onready var _screen_size_x = get_viewport_rect().size.x
 onready var _screen_size_y = get_viewport_rect().size.y
 
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
