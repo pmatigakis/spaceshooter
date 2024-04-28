@@ -1,7 +1,7 @@
 extends Area2D
 
 var velocity
-var target
+var target_group
 
 
 # Called when the node enters the scene tree for the first time.
@@ -18,11 +18,11 @@ func _on_Bullet_viewport_exited(viewport):
 
 
 func _on_area_entered(area):
-	if area.is_in_group(target) and area.has_method("hit"):
+	if area.is_in_group(target_group) and area.has_method("hit"):
 		area.hit()
 		queue_free()
 
 
-func start(velocity, target):
+func start(velocity, target_group):
 	self.velocity = velocity
-	self.target = target
+	self.target_group = target_group
