@@ -1,11 +1,13 @@
 extends CanvasLayer
 
-var score
+var score = 0
+var difficulty = 1
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	score = 0
+	$Score.text = "Score: %d" % score
+	$Difficulty.text = "Difficulty: %d" % difficulty
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -15,7 +17,12 @@ func _ready():
 
 func increase_score():
 	score += 1
-	$Score.text = String(score)
+	$Score.text = "Score: %d" % score
+
+
+func increase_difficulty():
+	difficulty += 1
+	$Difficulty.text = "Difficulty: %d" % difficulty
 
 
 func show_message(message):

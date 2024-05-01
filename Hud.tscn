@@ -10,12 +10,18 @@ margin_left = 1114.0
 margin_top = 34.0
 margin_right = 1239.0
 margin_bottom = 61.0
-text = "0"
+text = "Score: 0"
 align = 2
 valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
+
+[node name="Difficulty" type="Label" parent="."]
+margin_left = 1114.0
+margin_top = 65.0
+margin_right = 1239.0
+margin_bottom = 92.0
+text = "Difficulty: 1"
+align = 2
+valign = 1
 
 [node name="Message" type="Label" parent="."]
 anchor_left = 0.5
