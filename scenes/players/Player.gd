@@ -23,7 +23,7 @@ func _process(delta):
 	position.x = clamp(position.x - lr_action * MOVE_SPEED * delta, 50, _screen_size_x - 50)
 	position.y = clamp(position.y - ud_action * MOVE_SPEED * delta, 50, _screen_size_y - 50)
 
-	if Input.is_action_just_pressed("ui_select"):
+	if Input.is_action_pressed("fire_weapon"):
 		shoot()
 
 
@@ -33,7 +33,9 @@ func hit():
 
 
 func shoot():
-	var bullet = Bullet.instance()
-	bullet.position = $GunPosition.global_position
-	bullet.start(Vector2(0, -1000), "EnemyGroup")
-	get_tree().root.get_node("Spaceshooter/Bullets").add_child(bullet)
+	if $ShootTimer.is_stopped():
+		var bullet = Bullet.instance()
+		bullet.position = $GunPosition.global_position
+		bullet.start(Vector2(0, -1000), "EnemyGroup")
+		get_tree().root.get_node("Spaceshooter/Bullets").add_child(bullet)
+		$ShootTimer.start()
