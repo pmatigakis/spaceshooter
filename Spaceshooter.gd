@@ -81,6 +81,7 @@ func _on_EnemyTimer_timeout():
 	enemy.position = enemy_spawn_location.position
 	enemy.speed += rand_range(DIFFICULTY_LEVELS[difficulty]["min_extra_speed"], DIFFICULTY_LEVELS[difficulty]["max_extra_speed"])
 	enemy.connect("killed", self, "_on_Enemy_killed")
+	self.connect("player_killed", enemy, "_on_Player_killed")
 	$Enemies.add_child(enemy)
 
 
@@ -94,4 +95,3 @@ func _on_Enemy_killed():
 func _on_Player_killed():
 	$EnemyTimer.stop()
 	emit_signal("player_killed")
-	get_tree().call_group("EnemyGroup", "stop_shooting")

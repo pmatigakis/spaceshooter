@@ -37,7 +37,7 @@ func _fire(target_position):
 	$Blaster.fire(target_position)
 
 
-func stop_shooting():
+func _on_Player_killed():
 	shoot = false
 
 
