@@ -2,7 +2,7 @@ extends Control
 
 
 func _input(event):
-	if event is InputEventKey and event.scancode == KEY_ESCAPE:
+	if Input.is_action_pressed("ui_cancel"):
 		_on_Exit_pressed()
 
 
