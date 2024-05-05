@@ -21,18 +21,25 @@ stretch_mode = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
 margin_left = 30.0
-margin_top = -63.0
+margin_top = -89.0
 margin_right = 165.0
+margin_bottom = -21.0
 
 [node name="Start" type="Button" parent="VBoxContainer"]
 margin_right = 135.0
 margin_bottom = 20.0
 text = "Start"
 
-[node name="Exit" type="Button" parent="VBoxContainer"]
+[node name="Controls" type="Button" parent="VBoxContainer"]
 margin_top = 24.0
 margin_right = 135.0
 margin_bottom = 44.0
+text = "Controls"
+
+[node name="Exit" type="Button" parent="VBoxContainer"]
+margin_top = 48.0
+margin_right = 135.0
+margin_bottom = 68.0
 text = "Exit"
 
 [node name="Ships" type="Node2D" parent="."]
@@ -50,4 +57,5 @@ position = Vector2( 876, 335 )
 texture = ExtResource( 2 )
 
 [connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_Start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Controls" to="." method="_on_Controls_pressed"]
 [connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_Exit_pressed"]
