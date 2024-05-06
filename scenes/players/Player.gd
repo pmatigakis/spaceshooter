@@ -33,9 +33,4 @@ func hit():
 
 
 func shoot():
-	if $ShootTimer.is_stopped():
-		var bullet = Bullet.instance()
-		bullet.position = $GunPosition.global_position
-		bullet.start(Vector2(0, -1000), "EnemyGroup")
-		get_tree().root.get_node("Spaceshooter/Bullets").add_child(bullet)
-		$ShootTimer.start()
+	$Blaster.fire(Vector2($Blaster.global_position.x, $Blaster.global_position.y-1000),  "EnemyGroup")

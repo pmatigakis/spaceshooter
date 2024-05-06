@@ -34,7 +34,7 @@ func _on_area_entered(area):
 
 
 func _fire(target_position):
-	$Blaster.fire(target_position)
+	$Blaster.fire(target_position, "PlayerGroup")
 
 
 func _on_Player_killed():
