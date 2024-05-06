@@ -9,12 +9,14 @@ const DIFFICULTY_LEVELS = {
 	0: {
 		"min_extra_speed": 0,
 		"max_extra_speed": 30,
-		"spawn_rate": 1.0
+		"spawn_rate": 1.0,
+		"extra_fire_rate": 0
 	},
 	1: {
 		"min_extra_speed": 10,
 		"max_extra_speed": 30,
-		"spawn_rate": 0.9
+		"spawn_rate": 0.9,
+		"extra_fire_rate": 1000
 	},
 	2: {
 		"min_extra_speed": 20,

@@ -5,6 +5,7 @@ export var fire_rate = 2.0
 export var bullet_speed = 200.0
 
 
+
 var Bullet = preload("res://scenes/weapons/Bullet.tscn")
 
 
@@ -31,6 +32,7 @@ func fire(target_position, target_group):
 		var bullet_container = get_tree().root.get_node("Spaceshooter/Bullets")
 		bullet_container.add_child(bullet)
 
+		$FireSound.play()
 		$ReloadTimer.start()
 
 
