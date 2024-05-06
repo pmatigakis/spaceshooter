@@ -36,6 +36,7 @@ const DIFFICULTY_LEVELS = {
 }
 
 var enemy_scene = preload("res:///scenes/enemies/Enemy.tscn")
+var explosion_scene = preload("res:///scenes/effects/explosions/Explosion.tscn")
 
 var difficulty = 0
 var score = 0
@@ -87,7 +88,11 @@ func _on_EnemyTimer_timeout():
 	$Enemies.add_child(enemy)
 
 
-func _on_Enemy_killed():
+func _on_Enemy_killed(enemy):
+	var explosion = explosion_scene.instance()
+	explosion.position = enemy.position
+	$Explossions.add_child(explosion)
+	
 	_increase_score()
 
 	if score % 10 == 0 and difficulty < MAX_DIFICULTY:
@@ -97,3 +102,7 @@ func _on_Enemy_killed():
 func _on_Player_killed():
 	$EnemyTimer.stop()
 	emit_signal("player_killed")
+
+	var explosion = explosion_scene.instance()
+	explosion.position = $Player.position
+	$Explossions.add_child(explosion)

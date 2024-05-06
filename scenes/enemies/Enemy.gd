@@ -1,6 +1,6 @@
 extends Area2D
 
-signal killed
+signal killed(enemy)
 
 var Bullet = preload("res://scenes/weapons/Bullet.tscn")
 
@@ -42,5 +42,5 @@ func _on_Player_killed():
 
 
 func hit():
-	emit_signal("killed")
+	emit_signal("killed", self)
 	queue_free()
