@@ -5,8 +5,8 @@ export var fire_rate = 2.0
 export var bullet_speed = 200.0
 
 
-
 var Bullet = preload("res://scenes/weapons/Bullet.tscn")
+var bullet_container: Node2D
 
 
 # Called when the node enters the scene tree for the first time.
@@ -28,8 +28,6 @@ func fire(target_position, target_group):
 		var bullet = Bullet.instance()
 		bullet.position = global_position
 		bullet.start(global_position.direction_to(target_position) * bullet_speed, target_group)
-		
-		var bullet_container = get_tree().root.get_node("Spaceshooter/Bullets")
 		bullet_container.add_child(bullet)
 
 		$FireSound.play()

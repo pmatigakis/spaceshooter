@@ -3,6 +3,7 @@ extends Area2D
 signal killed(enemy)
 
 var Bullet = preload("res://scenes/weapons/Bullet.tscn")
+var bullet_container: Node2D
 
 var speed = 50
 var shoot = true
@@ -10,7 +11,7 @@ var shoot = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	$Blaster.bullet_container = bullet_container
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -22,7 +23,7 @@ func _process(delta):
 		if player:
 			self._fire(player.position)
 
-	
+
 func _on_enemy_viewport_exited(viewport):
 	queue_free()
 

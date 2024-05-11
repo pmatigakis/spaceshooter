@@ -4,6 +4,8 @@ signal killed
 
 var Bullet = preload("res://scenes/weapons/Bullet.tscn")
 
+export(NodePath) onready var bullet_container_path  = get_node(bullet_container_path) as Node2D
+
 const MOVE_SPEED = 300
 
 onready var _screen_size_x = get_viewport_rect().size.x
@@ -12,7 +14,7 @@ onready var _screen_size_y = get_viewport_rect().size.y
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	$Blaster.bullet_container = bullet_container_path
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

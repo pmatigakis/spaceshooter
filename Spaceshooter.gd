@@ -81,6 +81,7 @@ func _on_EnemyTimer_timeout():
 	enemy_spawn_location.offset = randi()
 	
 	var enemy = enemy_scene.instance()
+	enemy.bullet_container = $Bullets
 	enemy.position = enemy_spawn_location.position
 	enemy.speed += rand_range(DIFFICULTY_LEVELS[difficulty]["min_extra_speed"], DIFFICULTY_LEVELS[difficulty]["max_extra_speed"])
 	enemy.connect("killed", self, "_on_Enemy_killed")

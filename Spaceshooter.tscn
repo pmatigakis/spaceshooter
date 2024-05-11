@@ -86,6 +86,7 @@ texture = ExtResource( 6 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 668, 653 )
+bullet_container_path = NodePath("../Bullets")
 
 [node name="EnemyTimer" type="Timer" parent="."]
 
