@@ -19,9 +19,11 @@ func _process(delta):
 	position = position + (Vector2(0, speed) * delta)
 
 	if $Blaster.is_ready_to_fire() and shoot:
-		var player = get_tree().root.get_node("Spaceshooter/Player")
-		if player:
-			self._fire(player.position)
+		var players = get_tree().get_nodes_in_group("PlayerGroup")
+		if players:
+			# select a player in random
+			players.shuffle()
+			self._fire(players[0].position)
 
 
 func _on_enemy_viewport_exited(viewport):
