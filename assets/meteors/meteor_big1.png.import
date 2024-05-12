@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/planet04.png-b3a18fa6fffaa3e0d8f57145c0e9202d.stex"
+path="res://.import/meteor_big1.png-c8414a210e5bc1659cd7d5a7bbdc1589.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/planets/planet04.png"
-dest_files=[ "res://.import/planet04.png-b3a18fa6fffaa3e0d8f57145c0e9202d.stex" ]
+source_file="res://assets/meteors/meteor_big1.png"
+dest_files=[ "res://.import/meteor_big1.png-c8414a210e5bc1659cd7d5a7bbdc1589.stex" ]
 
 [params]
 

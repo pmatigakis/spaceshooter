@@ -2,7 +2,7 @@
 
 A simple shooter game using the Godot engine.
 
-The game graphics where created by [kenney](https://www.kenney.nl)
+Some of the game assets where created by [kenney](https://www.kenney.nl)
 
 
 ### Controls

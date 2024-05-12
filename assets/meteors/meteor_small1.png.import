@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/black.png-7f4f870ae6611b428021a1209d99be4c.stex"
+path="res://.import/meteor_small1.png-1adbda4a340de91f5b6096df628a0944.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/backgrounds/black.png"
-dest_files=[ "res://.import/black.png-7f4f870ae6611b428021a1209d99be4c.stex" ]
+source_file="res://assets/meteors/meteor_small1.png"
+dest_files=[ "res://.import/meteor_small1.png-1adbda4a340de91f5b6096df628a0944.stex" ]
 
 [params]
 

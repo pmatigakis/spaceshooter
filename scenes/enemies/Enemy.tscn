@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://scenes/enemies/Enemy.gd" type="Script" id=1]
-[ext_resource path="res://assets/ships/enemyRed3.png" type="Texture" id=2]
+[ext_resource path="res://assets/ships/enemy1.png" type="Texture" id=2]
 [ext_resource path="res://scenes/weapons/Blaster.tscn" type="PackedScene" id=3]
 
 [node name="Area2D" type="Area2D" groups=["EnemyGroup"]]
@@ -9,14 +9,15 @@ collision_layer = 2
 script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
-scale = Vector2( 0.4, 0.4 )
+scale = Vector2( 0.8, 0.8 )
 texture = ExtResource( 2 )
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
 rect = Rect2( -50, -50, 100, 100 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PoolVector2Array( -4, 13, 4, 13, 5, 9, 12, 12, 11, 15, 15, 17, 21, -1, 10, -14, 7, -14, 3, -17, -3, -17, -7, -14, -10, -14, -21, -1, -15, 17, -11, 16, -12, 11, -5, 9 )
+build_mode = 1
+polygon = PoolVector2Array( 0, 16, -6, 16, -6, 14, -11, 14, -11, 10, -17, 10, -21, 6, -41, 5, -40, -1, -22, -6, -23, -9, -15, -13, -8, -15, 0, -15, 8, -15, 14, -13, 20, -10, 19, -8, 40, -1, 40, 2, 38, 5, 21, 6, 20, 5, 18, 6, 12, 10, 9, 14, 5, 14, 3, 16 )
 
 [node name="Blaster" parent="." instance=ExtResource( 3 )]
 position = Vector2( 0, 10 )
