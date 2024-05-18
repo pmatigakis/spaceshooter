@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/meteor_small1.png-1adbda4a340de91f5b6096df628a0944.stex"
+path="res://.import/enemyRed1.png-d1d554b8527352942e78a5e2f2adb77f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/meteors/meteor_small1.png"
-dest_files=[ "res://.import/meteor_small1.png-1adbda4a340de91f5b6096df628a0944.stex" ]
+source_file="res://assets/ships/enemyRed1.png"
+dest_files=[ "res://.import/enemyRed1.png-d1d554b8527352942e78a5e2f2adb77f.stex" ]
 
 [params]
 
