@@ -3,10 +3,10 @@
 [ext_resource path="res://scenes/players/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Spaceshooter.gd" type="Script" id=2]
 [ext_resource path="res://Hud.tscn" type="PackedScene" id=3]
-[ext_resource path="res://assets/backgrounds/background.png" type="Texture" id=4]
-[ext_resource path="res://assets/meteors/meteorBrown_small1.png" type="Texture" id=5]
-[ext_resource path="res://assets/meteors/meteorBrown_med1.png" type="Texture" id=6]
-[ext_resource path="res://assets/meteors/meteorBrown_big1.png" type="Texture" id=7]
+[ext_resource path="res://assets/backgrounds/black.png" type="Texture" id=4]
+[ext_resource path="res://assets/backgrounds/stars1.png" type="Texture" id=5]
+[ext_resource path="res://assets/backgrounds/stars2.png" type="Texture" id=6]
+[ext_resource path="res://assets/backgrounds/stars3.png" type="Texture" id=7]
 [ext_resource path="res://ParallaxBackground.gd" type="Script" id=8]
 
 [sub_resource type="Curve2D" id=1]
@@ -25,58 +25,33 @@ margin_right = 1280.0
 margin_bottom = 720.0
 texture = ExtResource( 4 )
 expand = true
-stretch_mode = 3
+stretch_mode = 2
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2( 1, 0.3 )
+motion_scale = Vector2( 1, 1.5 )
 motion_mirroring = Vector2( 0, 720 )
 
-[node name="MeteorBrownBig1" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2( 190, 165 )
-texture = ExtResource( 7 )
-
-[node name="MeteorBrownBig2" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2( 1013, 501 )
-texture = ExtResource( 7 )
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxLayer"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 5 )
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_mirroring = Vector2( 0, 720 )
 
-[node name="MeteorBrownMed3" type="Sprite" parent="ParallaxBackground/ParallaxLayer2"]
-position = Vector2( 446, 222 )
-texture = ExtResource( 6 )
-
-[node name="MeteorBrownMed4" type="Sprite" parent="ParallaxBackground/ParallaxLayer2"]
-position = Vector2( 250, 440 )
-texture = ExtResource( 6 )
-
-[node name="MeteorBrownMed5" type="Sprite" parent="ParallaxBackground/ParallaxLayer2"]
-position = Vector2( 947, 237 )
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxLayer2"]
+margin_right = 40.0
+margin_bottom = 40.0
 texture = ExtResource( 6 )
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2( 1, 2 )
+motion_scale = Vector2( 1, 0.5 )
 motion_mirroring = Vector2( 0, 720 )
 
-[node name="MeteorBrownSmall1" type="Sprite" parent="ParallaxBackground/ParallaxLayer3"]
-position = Vector2( 644, 444 )
-texture = ExtResource( 5 )
-
-[node name="MeteorBrownSmall2" type="Sprite" parent="ParallaxBackground/ParallaxLayer3"]
-position = Vector2( 404, 568 )
-texture = ExtResource( 5 )
-
-[node name="MeteorBrownSmall3" type="Sprite" parent="ParallaxBackground/ParallaxLayer3"]
-position = Vector2( 716, 207 )
-texture = ExtResource( 5 )
-
-[node name="MeteorBrownSmall4" type="Sprite" parent="ParallaxBackground/ParallaxLayer3"]
-position = Vector2( 278, 114 )
-texture = ExtResource( 5 )
-
-[node name="MeteorBrownSmall5" type="Sprite" parent="ParallaxBackground/ParallaxLayer3"]
-position = Vector2( 1132, 580 )
-texture = ExtResource( 5 )
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxLayer3"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 7 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 668, 653 )

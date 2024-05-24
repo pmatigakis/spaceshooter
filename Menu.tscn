@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://assets/backgrounds/background.png" type="Texture" id=1]
+[ext_resource path="res://assets/backgrounds/black.png" type="Texture" id=1]
 [ext_resource path="res://assets/ships/enemyRed1.png" type="Texture" id=2]
 [ext_resource path="res://assets/ships/playerShip1_blue.png" type="Texture" id=3]
 [ext_resource path="res://Menu.gd" type="Script" id=4]
