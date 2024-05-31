@@ -1,8 +1,8 @@
 extends Node2D
 
 
-export var fire_rate = 2.0
-export var bullet_speed = 200.0
+@export var fire_rate = 2.0
+@export var bullet_speed = 200.0
 
 
 var Bullet = preload("res://scenes/weapons/Bullet.tscn")
@@ -25,7 +25,7 @@ func is_ready_to_fire():
 
 func fire(target_position, target_group):
 	if is_ready_to_fire():
-		var bullet = Bullet.instance()
+		var bullet = Bullet.instantiate()
 		bullet.position = global_position
 		bullet.start(global_position.direction_to(target_position) * bullet_speed, target_group)
 		bullet_container.add_child(bullet)

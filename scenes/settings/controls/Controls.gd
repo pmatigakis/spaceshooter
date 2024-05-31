@@ -13,4 +13,4 @@ func _ready():
 
 func _input(event):
 	if Input.is_action_pressed("ui_cancel"):
-		get_tree().change_scene("res://Menu.tscn")
+		get_tree().change_scene_to_file("res://Menu.tscn")

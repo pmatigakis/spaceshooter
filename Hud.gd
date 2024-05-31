@@ -13,7 +13,7 @@ func _ready():
 
 
 func _on_BackToMenu_pressed():
-	get_tree().change_scene("res://Menu.tscn")
+	get_tree().change_scene_to_file("res://Menu.tscn")
 
 
 func _on_difficulty_changed(new_difficulty):

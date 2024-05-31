@@ -12,4 +12,4 @@ func _ready():
 
 
 func _on_Apply_pressed():
-	get_tree().change_scene("res://Menu.tscn")
+	get_tree().change_scene_to_file("res://Menu.tscn")

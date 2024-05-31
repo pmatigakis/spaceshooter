@@ -7,7 +7,7 @@ func _input(event):
 
 
 func _on_Start_pressed():
-	get_tree().change_scene("res://Spaceshooter.tscn")
+	get_tree().change_scene_to_file("res://Spaceshooter.tscn")
 
 
 func _on_Exit_pressed():
@@ -15,4 +15,4 @@ func _on_Exit_pressed():
 
 
 func _on_Controls_pressed():
-	get_tree().change_scene("res://scenes/settings/controls/Controls.tscn")
+	get_tree().change_scene_to_file("res://scenes/settings/controls/Controls.tscn")

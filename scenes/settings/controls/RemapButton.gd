@@ -1,7 +1,7 @@
 extends Button
 
 
-export(String) var action = "ui_up"
+@export var action: String = "ui_up"
 
 
 func _ready():
@@ -23,7 +23,7 @@ func _unhandled_key_input(event):
 	# Note that you can use the _input callback instead, especially if
 	# you want to work with gamepads.
 	remap_action_to(event)
-	pressed = false
+	button_pressed = false
 
 
 func remap_action_to(event):
@@ -37,5 +37,5 @@ func remap_action_to(event):
 
 
 func display_current_key():
-	var current_key = InputMap.get_action_list(action)[0].as_text()
+	var current_key = InputMap.action_get_events(action)[0].as_text()
 	text = "%s Key" % current_key

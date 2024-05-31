@@ -1,70 +1,58 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=9 format=3 uid="uid://cqg06r7scg0m7"]
 
-[ext_resource path="res://scenes/players/Player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Spaceshooter.gd" type="Script" id=2]
-[ext_resource path="res://Hud.tscn" type="PackedScene" id=3]
-[ext_resource path="res://assets/backgrounds/black.png" type="Texture" id=4]
-[ext_resource path="res://assets/backgrounds/stars1.png" type="Texture" id=5]
-[ext_resource path="res://assets/backgrounds/stars2.png" type="Texture" id=6]
-[ext_resource path="res://assets/backgrounds/stars3.png" type="Texture" id=7]
-[ext_resource path="res://ParallaxBackground.gd" type="Script" id=8]
-
-[sub_resource type="Curve2D" id=1]
-_data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 97, -141, 0, 0, 0, 0, 1181, -137 )
-}
+[ext_resource type="PackedScene" uid="uid://b1qad4letyq4p" path="res://scenes/players/Player.tscn" id="1"]
+[ext_resource type="Script" path="res://Spaceshooter.gd" id="2"]
+[ext_resource type="PackedScene" path="res://Hud.tscn" id="3"]
+[ext_resource type="Texture2D" uid="uid://dv8y1ya0wq2t6" path="res://assets/backgrounds/black.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://bt4g8eef3co4k" path="res://assets/backgrounds/stars1.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://eewb5g6krh3r" path="res://assets/backgrounds/stars2.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://bc41ley84dxqv" path="res://assets/backgrounds/stars3.png" id="7"]
+[ext_resource type="Script" path="res://ParallaxBackground.gd" id="8"]
 
 [node name="Spaceshooter" type="Node2D"]
-script = ExtResource( 2 )
+script = ExtResource("2")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-script = ExtResource( 8 )
+script = ExtResource("8")
 
 [node name="Background" type="TextureRect" parent="ParallaxBackground"]
-margin_right = 1280.0
-margin_bottom = 720.0
-texture = ExtResource( 4 )
-expand = true
-stretch_mode = 2
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("4")
+expand_mode = 1
+stretch_mode = 1
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2( 1, 1.5 )
-motion_mirroring = Vector2( 0, 720 )
+motion_scale = Vector2(1, 1.5)
+motion_mirroring = Vector2(0, 720)
 
 [node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxLayer"]
-margin_right = 40.0
-margin_bottom = 40.0
-texture = ExtResource( 5 )
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("5")
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_mirroring = Vector2( 0, 720 )
+motion_mirroring = Vector2(0, 720)
 
 [node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxLayer2"]
-margin_right = 40.0
-margin_bottom = 40.0
-texture = ExtResource( 6 )
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("6")
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2( 1, 0.5 )
-motion_mirroring = Vector2( 0, 720 )
+motion_scale = Vector2(1, 0.5)
+motion_mirroring = Vector2(0, 720)
 
 [node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxLayer3"]
-margin_right = 40.0
-margin_bottom = 40.0
-texture = ExtResource( 7 )
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("7")
 
-[node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 668, 653 )
+[node name="Player" parent="." node_paths=PackedStringArray("bullet_container") instance=ExtResource("1")]
+position = Vector2(668, 653)
 bullet_container = NodePath("../Bullets")
 
 [node name="EnemyTimer" type="Timer" parent="."]
-
-[node name="EnemyPath" type="Path2D" parent="."]
-curve = SubResource( 1 )
-
-[node name="EnemySpawnLocation" type="PathFollow2D" parent="EnemyPath"]
-position = Vector2( 97, -141 )
-rotation = 0.00369039
 
 [node name="Enemies" type="Node2D" parent="."]
 
@@ -72,7 +60,7 @@ rotation = 0.00369039
 
 [node name="Explossions" type="Node2D" parent="."]
 
-[node name="HUD" parent="." instance=ExtResource( 3 )]
+[node name="HUD" parent="." instance=ExtResource("3")]
 
 [connection signal="difficulty_changed" from="." to="HUD" method="_on_difficulty_changed"]
 [connection signal="player_killed" from="." to="HUD" method="_on_player_killed"]

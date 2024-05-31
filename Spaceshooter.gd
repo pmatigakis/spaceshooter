@@ -44,8 +44,11 @@ var score = 0
 var min_extra_speed = 0
 var max_extra_speed = 30
 
-onready var _screen_size_x = get_viewport_rect().size.x
-onready var _screen_size_y = get_viewport_rect().size.y
+@onready var _screen_size_x = get_viewport_rect().size.x
+@onready var _screen_size_y = get_viewport_rect().size.y
+
+var spawn_x_padding = 50
+var spawn_y_padding = -50
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -61,7 +64,7 @@ func _ready():
 
 func _input(event):
 	if Input.is_action_pressed("ui_cancel"):
-		get_tree().change_scene("res://Menu.tscn")
+		get_tree().change_scene_to_file("res://Menu.tscn")
 
 
 func _increase_score():
@@ -77,20 +80,18 @@ func _increase_difficulty():
 
 
 func _on_EnemyTimer_timeout():
-	var enemy_spawn_location = get_node("EnemyPath/EnemySpawnLocation")
-	enemy_spawn_location.offset = randi()
-	
-	var enemy = enemy_scene.instance()
+	var enemy = enemy_scene.instantiate()
 	enemy.bullet_container = $Bullets
-	enemy.position = enemy_spawn_location.position
-	enemy.speed += rand_range(DIFFICULTY_LEVELS[difficulty]["min_extra_speed"], DIFFICULTY_LEVELS[difficulty]["max_extra_speed"])
-	enemy.connect("killed", self, "_on_Enemy_killed")
-	self.connect("player_killed", enemy, "_on_Player_killed")
+	enemy.position = Vector2(randi_range(spawn_x_padding, _screen_size_x - spawn_x_padding), spawn_y_padding)
+	print(enemy.position)
+	enemy.speed += randf_range(DIFFICULTY_LEVELS[difficulty]["min_extra_speed"], DIFFICULTY_LEVELS[difficulty]["max_extra_speed"])
+	enemy.connect("killed", Callable(self, "_on_Enemy_killed"))
+	self.connect("player_killed", Callable(enemy, "_on_Player_killed"))
 	$Enemies.add_child(enemy)
 
 
 func _on_Enemy_killed(enemy):
-	var explosion = explosion_scene.instance()
+	var explosion = explosion_scene.instantiate()
 	explosion.position = enemy.position
 	$Explossions.add_child(explosion)
 	
@@ -104,6 +105,6 @@ func _on_Player_killed():
 	$EnemyTimer.stop()
 	emit_signal("player_killed")
 
-	var explosion = explosion_scene.instance()
+	var explosion = explosion_scene.instantiate()
 	explosion.position = $Player.position
 	$Explossions.add_child(explosion)

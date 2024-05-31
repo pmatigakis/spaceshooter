@@ -4,12 +4,12 @@ signal killed
 
 var Bullet = preload("res://scenes/weapons/Bullet.tscn")
 
-export(NodePath) onready var bullet_container = get_node(bullet_container) as Node2D
+@export var bullet_container: Node2D
 
 const MOVE_SPEED = 300
 
-onready var _screen_size_x = get_viewport_rect().size.x
-onready var _screen_size_y = get_viewport_rect().size.y
+@onready var _screen_size_x = get_viewport_rect().size.x
+@onready var _screen_size_y = get_viewport_rect().size.y
 
 
 # Called when the node enters the scene tree for the first time.
